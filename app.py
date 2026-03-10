@@ -163,8 +163,7 @@ if __name__ == "__main__":
 	except Exception:
 		max_cores = multiprocessing.cpu_count()
 	parser.add_argument("--cores", type=int, default=1, metavar=f"[1-{max_cores}]", help=f"Number of CPU cores to use (max {max_cores})")
-	# Check if --cores was explicitly set
-	import sys
+	# import sys
 	cores_flag = any(arg.startswith('--cores') for arg in sys.argv)
 	args = parser.parse_args()
 	if not cores_flag:
